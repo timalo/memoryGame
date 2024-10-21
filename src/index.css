@@ -1,0 +1,90 @@
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  max-width: 100vw;
+  /* soft gray-ish background gradient */
+  background: linear-gradient(180deg, #f0f0f0 0%, #787878 100%);
+}
+
+#root {
+  min-height: 100%;
+}
+
+.content {
+  height: 100%;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+header > * {
+  margin: 0 1em;
+}
+
+.titleDiv {
+  display: flex;
+  justify-content: center;
+  font-size: 3em;
+  font-weight: 800;
+  color: #2fcc13;
+}
+
+.scoreDiv {
+  margin: 1em;
+  border: solid 2px black;
+  padding: 1em 1%;
+}
+
+.cardContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  padding: 0 2em;
+}
+
+.cardDiv {
+  /* aspect-ratio: 1/1; Maybe not needed?*/
+  margin: 1em;
+  padding: 0.7em;
+  background-color: #bbbbbb;
+  border-radius: 15px;
+  transition: ease-in-out 0.2s;
+  cursor: pointer;
+  border: solid 2px black;
+}
+
+.cardDiv:hover {
+  background-color: #dddddd;
+  transform: scale(1.03);
+}
+
+.cardImageDiv {
+  /* border: 1px solid orange; */
+  object-fit: cover;
+  aspect-ratio: 1/1;
+  max-height: 85%;
+  min-width: 100%;
+}
+
+.cardImage {
+  width: 100%;
+  max-height: 100%;
+  min-height: 100%;
+
+  border-radius: 15px;
+  height: auto;
+  box-shadow: 0 0 5px 2px #333333;
+}
+
+.cardTitleDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+  font-weight: 800;
+  min-height: 20%;
+}

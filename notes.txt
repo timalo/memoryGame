@@ -1,0 +1,12 @@
+Components:
+    App
+        Game
+            APICaller ???
+
+
+
+Game should keep track of achieved high score and current game score. Probably just as state in top component.
+Should also keep track of clicked cards, so we can detect when the game is lost.
+
+ApiCaller needs to use an effect.            
+
