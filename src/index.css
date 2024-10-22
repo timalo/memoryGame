@@ -29,6 +29,7 @@ header > * {
 .titleDiv {
   display: flex;
   justify-content: center;
+  align-items: center;
   font-size: 3em;
   font-weight: 800;
   color: #2fcc13;
@@ -47,7 +48,6 @@ header > * {
 }
 
 .cardDiv {
-  /* aspect-ratio: 1/1; Maybe not needed?*/
   margin: 1em;
   padding: 0.7em;
   background-color: #bbbbbb;
@@ -64,18 +64,19 @@ header > * {
 
 .cardImageDiv {
   /* border: 1px solid orange; */
-  object-fit: cover;
-  aspect-ratio: 1/1;
+  display: flex;
+  justify-content: center;
+  width: 100%;
   max-height: 85%;
-  min-width: 100%;
+  min-height: 85%;
+  max-width: 100%;
 }
 
 .cardImage {
-  width: 100%;
-  max-height: 100%;
-  min-height: 100%;
-
+  max-width: 100%;
+  min-width: 100%;
   border-radius: 15px;
+  aspect-ratio: 1/1;
   height: auto;
   box-shadow: 0 0 5px 2px #333333;
 }
@@ -87,4 +88,8 @@ header > * {
   font-size: 1.5em;
   font-weight: 800;
   min-height: 20%;
+}
+
+.cardTitle {
+  text-transform: capitalize;
 }
