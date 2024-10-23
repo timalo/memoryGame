@@ -3,7 +3,17 @@ import Card from "./Card";
 
 export default function Game(props) {
   const [shuffledCards, setShuffledCards] = useState([]);
-  //TODO: Constantly getting into an endless loop here, being  only able to randomize all of the cards in infinite loop
+  const [currentScore, setCurrentScore] = useState(0);
+  const [highScore, setHighScore] = useState(0);
+
+  useEffect(() => {
+    console.log("Game component mounted");
+    const randomCards = props.currentFetch
+      .sort(() => Math.random() - 0.5)
+      .slice(0, 10);
+    setShuffledCards(randomCards);
+  }, [props.currentFetch]);
+
   return shuffledCards.map((card, index) => (
     <Card key={index} imageUrl={card.imageUrl} title={card.title} />
   ));

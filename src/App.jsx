@@ -5,8 +5,6 @@ import Game from "./Game";
 
 export default function App() {
   const [currentFetch, setCurrentFetch] = useState([]);
-  const [currentScore, setCurrentScore] = useState(0);
-  const [highScore, setHighScore] = useState(0);
 
   useEffect(() => {
     fetch("https://pokeapi.co/api/v2/pokemon/?limit=20&offset=40")
@@ -18,8 +16,7 @@ export default function App() {
         }));
         setCurrentFetch(fetchedCards);
       });
-  }),
-    []; //Empty array to run the effect only on component render
+  }, []);
 
   return (
     <div className="content">
@@ -38,7 +35,6 @@ export default function App() {
       <div className="gameDiv">
         <div className="cardContainer">
           <Game currentFetch={currentFetch}></Game>
-          {/* Pass the currentFetch prop to the Game component */}
         </div>
       </div>
     </div>
