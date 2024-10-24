@@ -35,16 +35,40 @@ header > * {
   color: #2fcc13;
 }
 
+.subTitle {
+  font-size: 1.2em;
+  font-weight: 800;
+  color: #2f8813;
+  display: flex;
+  justify-content: center;
+}
+
+.hidden {
+  transition: ease-in-out 0.3s;
+  transform: scaleY(0);
+}
+
 .scoreDiv {
   margin: 1em;
   border: solid 2px black;
-  padding: 1em 1%;
+  padding: 0.4em 1em;
+  background-color: #cacaca;
 }
 
 .cardContainer {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   padding: 0 2em;
+}
+
+.score {
+  font-size: 1.5em;
+  font-weight: 800;
+  color: #2f8813;
+}
+
+.highScore {
+  color: #c48210;
 }
 
 .cardDiv {

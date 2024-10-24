@@ -3,8 +3,6 @@ import Card from "./Card";
 
 export default function Game(props) {
   const [shuffledCards, setShuffledCards] = useState([]);
-  const [currentScore, setCurrentScore] = useState(0);
-  const [highScore, setHighScore] = useState(0);
   const [clickedCards, setClickedCards] = useState([]);
 
   useEffect(() => {
@@ -19,24 +17,25 @@ export default function Game(props) {
   }
 
   function cardClick(e) {
-    console.log("Card clicked");
-    console.log(e);
-    console.log(e.target);
+    // console.log(e.currentTarget.lastChild.innerText);
+    checkCardClicked(e.currentTarget.lastChild.innerText);
   }
-  /* 
-  function checkCardClicked(cardId) {
-    if (clickedCards.includes(cardId)) {
-      setCurrentScore(0);
+
+  function checkCardClicked(cardName) {
+    console.log("Calling checkCardClicked with value: ", cardName);
+    if (clickedCards.includes(cardName)) {
+      console.log("Lose");
+      props.nullScore();
       setClickedCards([]);
+      shuffleCards();
     } else {
-      const newClickedCards = [...clickedCards, cardId];
+      console.log("should award point");
+      props.increaseScore();
+      const newClickedCards = [...clickedCards, cardName];
       setClickedCards(newClickedCards);
-      setCurrentScore(currentScore + 1);
-      if (currentScore >= highScore) {
-        setHighScore(currentScore + 1);
-      }
+      shuffleCards();
     }
-  } */
+  }
 
   //TODO: implement the cardClick function, will have to find a way to associate certain card with certain id.
   return shuffledCards.map((card, index) => (
