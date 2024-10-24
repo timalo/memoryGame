@@ -15,11 +15,20 @@ export default function App() {
     setCurrentScore(currentScore + 1);
     if (currentScore >= highScore) {
       setHighScore(currentScore + 1);
+      showHighScoreAnim();
     }
   }
 
   function nullScore() {
     setCurrentScore(0);
+  }
+
+  function showHighScoreAnim() {
+    const highScoreAnimation = document.querySelector(".highScoreAnimation");
+    highScoreAnimation.classList = "highScoreAnimation highScoreAnimate";
+    setTimeout(() => {
+      highScoreAnimation.classList = "highScoreAnimation hidden";
+    }, 1000);
   }
 
   function hideSubtitle() {
@@ -52,6 +61,7 @@ export default function App() {
           <div className="highScoreDiv">
             High Score: <span className="score highScore">{highScore}</span>
           </div>
+          <div className="highScoreAnimation hidden">New high score!</div>
         </div>
       </header>
       <div className="subTitle">
